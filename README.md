@@ -2,13 +2,13 @@
 Dash app  pulling various financial-related information based on an input ticker code
 
 
-This app was initially designed by [Eric Kleppen](https://github.com/bendgame) and was fully described in this [medium article](https://medium.com/swlh/how-to-create-a-dashboard-to-dominate-the-stock-market-using-python-and-dash-c35a12108c93).
+This app was initially designed by [Eric Kleppen](https://github.com/bendgame) and was fully described in his detailed [medium article](https://medium.com/swlh/how-to-create-a-dashboard-to-dominate-the-stock-market-using-python-and-dash-c35a12108c93).
 The original code from the author can be found on github [here](https://github.com/bendgame/MediumFinance).
 
-I had to rewrite the financial report module which was no longer functional, likely due to later changes in [marketwatch](https://www.marketwatch.com/) layout.
+I had to rewrite the financial report module which was no longer functional, likely due to recent changes in [marketwatch](https://www.marketwatch.com/) layout.
 I also introduced a few smaller modifications to manage API credentials and remediate unnecessary errors on dashboard start-up.
 
-I find the app very interesting as it provides a set of examples of functions, cards and displays in Dash.
+I find the app interesting as it provides with a set of examples of app architecture, functionalities and callbacks, displays in Dash. It is a nice source of ideas for future projects.
 
 # What does the App do ?
 
@@ -28,5 +28,5 @@ The App also uses:
 - sqlite3 (to buffer tweets)
 
 # Output
-The app is a little slow and you should allow sufficient time for the dashboard to pop up and then populate.
-Running the app from the terminal (`python index.py`) will automatically trigger the browser to open to display the dashboard.
+The app is a little slow and you should allow sufficient time for the dashboard to pop up and then populate once a ticker has been input.
+Running the app from the terminal (`python index.py`) will automatically trigger the browser to open and display the dashboard.
