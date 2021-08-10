@@ -8,7 +8,7 @@ The original code from the author can be found on github [here](https://github.c
 I had to rewrite the financial report module which was no longer functional, likely due to recent changes in [marketwatch](https://www.marketwatch.com/) layout.
 I also introduced a few smaller modifications to manage API credentials and remediate unnecessary errors on dashboard start-up.
 
-I find the app interesting as it provides with a set of examples of app architecture, functionalities and callbacks, displays in Dash. It is a nice source of ideas for future projects.
+I find the app interesting as it provides with a set of examples of app architecture, displays in Dash, functionalities and callbacks. It is a nice source of solutions for future projects.
 
 # What does the App do ?
 
