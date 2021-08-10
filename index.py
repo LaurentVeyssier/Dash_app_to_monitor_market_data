@@ -44,7 +44,8 @@ dfr = get_reddit(cid= r_cid, csec= r_csec, uag= r_uag)
                 
 layout1 = html.Div([
         # html.Div(id = 'cards')
-                dbc.Row([dbc.Col(make_card("Enter Ticker", "success", ticker_inputs('ticker-input', 'date-picker', 24)))]) #row 1
+                dbc.Row([dbc.Col(make_card("Enter Ticker", "success", ticker_inputs('ticker-input', 'date-picker', 24)))
+                        ,dbc.Col([make_card("Description", "success", html.Div(id="description"))])]) #row 1
                 ,dbc.Row([dbc.Col([make_card("Twitter Order Flow", 'primary', make_table('table-sorting-filtering2', flow, '17px', 10))])
                         ,dbc.Col([make_card("Fin table ", "secondary", html.Div(id="fin-table"))])
                         ])
@@ -114,6 +115,7 @@ def split_filter_part(filter_part):
 
 
 @app.callback(Output('cards', 'children'),
+              Output('description', 'children'),
 [Input('ticker-input', 'value')])
 def refresh_cards(ticker):
     if ticker is None:
@@ -133,7 +135,7 @@ def refresh_cards(ticker):
                         , dbc.Col(make_card("50d Avg Price", 'secondary', TICKER.info['fiftyDayAverage']))
                         , dbc.Col(make_card("Avg 10d Vol", 'secondary', TICKER.info['averageVolume10days']))
                         ] #end cards list
-        return cards 
+        return cards , TICKER.info['longBusinessSummary']
 
 @app.callback(
     [Output(f"collapse-{i}", "is_open") for i in range(1, 4)],
